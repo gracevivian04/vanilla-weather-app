@@ -32,8 +32,18 @@ function displayTemperature(response) {
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "cdec7dc86f02673d413e36697779fb47";
-let city = "";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid={cdec7dc86f02673d413e36697779fb47}&units=metric`;
+function search(city) {
+    let apiKey = "cdec7dc86f02673d413e36697779fb47";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
 
 axios.get(apiUrl).then(displayTemperature);
+
+let form = document.querySelector("search-form");
+    form.addEventListener("submit", handleSubmit);
