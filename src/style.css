@@ -25,6 +25,10 @@ li {
     line-height: 19px;
 }
 
+.float-left {
+    float: left;
+  }
+
 li:first-letter {
     text-transform: capitalize;
 }
