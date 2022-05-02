@@ -36,6 +36,7 @@ li:first-letter {
 .weather-app-wrapper {
     max-width: 600px;
     margin: 30px auto;
+    background-color: cornflowerblue;
 }
 
 .weather-app {
